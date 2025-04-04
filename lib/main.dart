@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_buoi_2/widgets/custom_button.dart';
+import 'package:flutter_buoi_2/widgets/custom_task.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,73 +29,37 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Center(
-            child: Card(
-              margin: EdgeInsets.all(16),
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-
-                    Container(
-                      margin: EdgeInsets.only(bottom: 16),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Work 1",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Done"),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Container(
-                      margin: EdgeInsets.only(bottom: 16),
-                      child: Column(
-                        children: [
-                          Text(
-                            "Work 2",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Done"),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    Container(
-                      child: Column(
-                        children: [
-                          Text(
-                            "Work 3",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Done"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+          //Sử dụng CustomTask
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomTask(
+                text: "Đi học",
+                icon: Icon(Icons.radio_button_unchecked),
               ),
-            )
+              CustomTask(
+                text: "Đi làm",
+                icon: Icon(Icons.radio_button_unchecked),
+              ),
+              CustomTask(
+                text: "Tập thể dục",
+                icon: Icon(Icons.radio_button_unchecked),
+              ),
+              CustomTask(
+                text: "Làm bài tập",
+                icon: Icon(Icons.radio_button_unchecked),
+              ),
+              CustomTask(
+                text: "Chơi game",
+                icon: Icon(Icons.radio_button_unchecked),
+              ),
+              CustomButton(
+                text: "Add Task",
+                icon: Icons.add,
+              )
+            ],
+          ),
+
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
